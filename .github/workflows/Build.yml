@@ -24,11 +24,11 @@ jobs:
       run: chmod +x gradlew
       
     - name: Build with Gradle (Ignore All Errors)
-      run: ./gradlew assembleDebug -x spotlessCheck -x test -x lint || echo "Ignoring spotless formatting blocks"
+      run: ./gradlew assembleDebug -x spotlessCheck -x test -x lint || echo "Ignoring errors"
 
-    - name: Upload APK Artifact
+    - name: Upload APK Artifact (Zorla Yükle)
       uses: actions/upload-artifact@v4
       with:
-        name: Geto-Forced-APK
-        path: "**/build/outputs/apk/debug/*.apk"
-
+        name: Geto-Calisan-APK
+        path: |
+          **/*.apk
